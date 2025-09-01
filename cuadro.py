@@ -18,5 +18,6 @@ def pala():
     cursor.execute("SELECT palabra, descripcion FROM palabras ORDER BY RANDOM() LIMIT 1")
     return cursor.fetchone()
 
-
-
+def inpal(palabra, descripcion):
+    cursor.execute("INSERT INTO palabras (palabra, descripcion) VALUES (?, ?)", (palabra.lower(), descripcion))
+    conn.commit()
