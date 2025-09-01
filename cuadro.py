@@ -14,4 +14,9 @@ cursor.execute('''
 ''')
 conn.commit()
 
+def pala():
+    cursor.execute("SELECT palabra, descripcion FROM palabras ORDER BY RANDOM() LIMIT 1")
+    return cursor.fetchone()
+
+
 
