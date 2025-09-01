@@ -21,3 +21,7 @@ def pala():
 def inpal(palabra, descripcion):
     cursor.execute("INSERT INTO palabras (palabra, descripcion) VALUES (?, ?)", (palabra.lower(), descripcion))
     conn.commit()
+
+def elipal(palabra):
+    cursor.execute("DELETE FROM palabras WHERE palabra = ?", (palabra.lower(),))
+    conn.commit()
